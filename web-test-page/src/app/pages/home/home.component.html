@@ -1,0 +1,121 @@
+<app-header></app-header>
+<div class="main_container">
+  <div class="main_container__post">
+    <img class="post__logo" src="./assets/logo.png" alt="logo" />
+    <div class="post__content">
+      <p class="post__paragraph">
+        The Yale School of Art is a graduate school that confers MFAs in Graphic
+        Design, Painting/Printmaking, Photography, and Sculpture; and offers
+        undergraduate-level art courses to Yale College students. Our website
+        exists as an ongoing collaborative experiment in digital publishing and
+        information sharing. It functions as a wiki—all members of the School of
+        Art community have the ability to add new, and edit most existing
+        content.
+      </p>
+      <button class="btn btn-outline-secondary" (click)="toggleButton()">
+        {{ buttonText }}
+      </button>
+    </div>
+  </div>
+  <div
+    *ngFor="let calendarEvent of calendarEvents"
+    class="main_container__events_calendar"
+  >
+    <div class="events_calendar__container">
+      <div class="events_calendar__color"></div>
+      <div class="events_calendar__date">
+        <div class="events_calendar__day__start">
+          <span class="number_date">16</span> <span class="text_date">Oct</span>
+        </div>
+        <div class="events_calendar__day__separator">-</div>
+        <div class="events_calendar__day__end">
+          <span class="number_date">16</span> <span class="text_date">Oct</span>
+        </div>
+      </div>
+      <div class="events_calendar__main_content">
+        <div
+          class="events_calendar__main_content__contentInit"
+          (click)="activeExpandedToggle()"
+        >
+          <h3 class="events_calendar__content__title">
+            "why do i always fall out of bed at night?" — 1st-Year MFA Show
+          </h3>
+          <div class="events_calendar__content__paragraph">
+            October 16 – November 4, 2023 Public reception: Wednesday, November
+            1 from 6-8PM...
+          </div>
+          <label class="events_calendar__content__location"
+            ><img
+              src="./assets/location.png"
+              alt="location"
+              class="events_calendar__content__icon"
+            />
+            1156 Chapel Street, New Haven</label
+          >
+          <label class="events_calendar__content__date"
+            ><img
+              src="./assets/reloj.png"
+              alt="reloj"
+              class="events_calendar__content__icon"
+            />
+            11:00 AM - 4th Oct 16th</label
+          >
+        </div>
+        <div
+          class="events_calendar__expanded"
+          [ngClass]="
+            activeExpanded
+              ? 'events_calendar__expanded__active'
+              : 'events_calendar__expanded__disable'
+          "
+        >
+          <div class="events_calendar__expanded__tags">
+            <div class="expanded__tag">Open to Yale Community</div>
+            <div class="expanded__tag">All-School / Interdepartmental</div>
+            <div class="expanded__tag">Exhibitions</div>
+          </div>
+          <div class="expanded__contend">
+            <h5 class="expanded__contend__date">
+              October 16 – November 4, 2023
+            </h5>
+            <h5 class="expanded__contend__text_bold">
+              Public reception: Wednesday, November 1 from 6-8PM
+            </h5>
+            <div class="expanded__contend__text">
+              The Fall 2023 1st-Year MFA Show, why do i always fall out of bed
+              at night?, is open in Green Hall Gallery to the Yale community.
+            </div>
+
+            <h5 class="expanded__contend__text_bold">
+              Fall 2023 Gallery Hours: Monday - Friday, 11AM-4PM*
+            </h5>
+            <div class="expanded__contend__text">
+              *Fall 2023 exhibitions are open to members of the Yale community
+              (active IDs holders) and invited, accompanied guests.
+            </div>
+            <div class="expanded__contend__text">
+              Special hours Saturday Nov 4th 12-4pm
+            </div>
+          </div>
+          <hr />
+          <div class="expanded_footer">
+            <button class="expanded_footer__btn">Add calendar</button>
+            <div class="expanded_footer__social_media">
+              <a href="#"
+                ><img src="./assets/link.png" class="social_media__icon"
+              /></a>
+              <a href="#"
+                ><img src="./assets/facebook.png" class="social_media__icon"
+              /></a>
+              <a href="#"
+                ><img src="./assets/gorjeo.png" class="social_media__icon"
+              /></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

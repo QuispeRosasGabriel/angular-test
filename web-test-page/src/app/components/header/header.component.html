@@ -1,0 +1,53 @@
+<header>
+  <div class="header__left">
+    <div class="header__logo">
+      <img src="./assets/Icon.png" alt="" />
+    </div>
+    <nav class="header__list" [ngClass]="isActive ? 'active' : ''">
+      <ul>
+        <li class="cursor-pointer">
+          <a href="">Home</a>
+        </li>
+        <li class="cursor-pointer">
+          <a href="">About</a>
+        </li>
+        <li class="cursor-pointer">
+          <a href=""> Apply to School</a>
+        </li>
+        <li class="cursor-pointer">
+          <a href="">Exhibitions</a>
+        </li>
+        <li class="cursor-pointer">
+          <a href="">Publications</a>
+        </li>
+        <li class="cursor-pointer">
+          <a href="">News</a>
+        </li>
+        <li class="cursor-pointer">
+          <a href="">Events</a>
+        </li>
+        <li *ngIf="!!isLoggedIn" class="cursor-pointer">
+          <a href="">Private Page</a>
+        </li>
+        <li class="cursor-pointer">
+          <a class="header__list__login" (click)="goToAccessForm('login')"
+            >Login</a
+          >
+        </li>
+        <li class="cursor-pointer">
+          <a class="header__list__SignUp" (click)="goToAccessForm('signUp')"
+            >Sign Up</a
+          >
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <div class="header__right">
+    <div class="header__right__hamburger" (click)="toggleNav()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+</header>
+

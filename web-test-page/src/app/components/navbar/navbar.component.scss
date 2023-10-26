@@ -1,0 +1,127 @@
+
+.quick_links {
+    z-index: 1000;
+    transform: translateY(91.7px);
+    background: transparent;
+    color: rgba(0, 0, 0, 0.87);
+    -webkit-clip-path: inset(0 0 750px 0);
+    clip-path: inset(0 0 750px 0);
+    -webkit-transition: -webkit-clip-path 0.5625s, clip-path 0.375s;
+    transition: -webkit-clip-path 0.5625s, clip-path 0.375s;
+    // position: absolute;
+  }
+  
+  .quick_links:hover {
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+    -webkit-transition-duration: 0.75s;
+    transition-duration: 0.75s;
+    -webkit-clip-path: inset(0 0 0 0);
+    clip-path: inset(0 0 0 0);
+  }
+  
+  .quick_links a {
+    display: block;
+    line-height: 50px;
+    padding: 0 20px;
+    color: inherit;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #8D99AE;
+  }
+  
+  a:hover {
+    background: #ff979d;
+  }
+  
+  a:active {
+    background: #ff979d;
+  }
+  
+  .navicon {
+    padding: 23px 20px;
+    cursor: pointer;
+    -webkit-transform-origin: 32px 24px;
+    -ms-transform-origin: 32px 24px;
+    transform-origin: 32px 24px;
+  }
+  
+  .navicon div {
+    position: relative;
+    width: 20px;
+    height: 2px;
+    background: rgba(0, 0, 0, 0.87);
+  }
+  
+  .navicon div:before,
+  .navicon div:after {
+    display: block;
+    content: "";
+    width: 20px;
+    height: 2px;
+    background: rgba(0, 0, 0, 0.87);
+    position: absolute;
+  }
+  
+  .navicon div:before {
+    top: -7px;
+  }
+  
+  .navicon div:after {
+    top: 7px;
+  }
+  
+  
+  
+  .nav {
+    max-width: 1300px;
+    width: 100%;
+  }
+  
+  .logo {
+    width: 500px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    padding-bottom: 30px;
+  }
+  
+  
+  .icon {
+    width: 50px;
+  }
+  
+  .btn {
+    margin: 0 10px;
+  }
+  
+  .container {
+    padding-top: 150px;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+  
+  .btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+  }
+  
+  .btn-primary:hover,
+  .btn-primary:focus {
+    background-color: #0056b3;
+    border-color: #0056b3;
+  }
+  
+  .btn-secondary:hover,
+  .btn-secondary:focus {
+    background-color: #545b62;
+    border-color: #545b62;
+  }
+  

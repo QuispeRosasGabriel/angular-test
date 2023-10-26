@@ -1,0 +1,102 @@
+<div class="main-container">
+  <div class="wrapper">
+    <div class="title-text">
+      <div *ngIf="loginOrSignup === 'login'" class="title login">
+        Login Form
+      </div>
+      <div *ngIf="loginOrSignup === 'signUp'" class="title signup">
+        Sign Up Form
+      </div>
+    </div>
+    <p class="suggestion-msg">
+      *Email must contain +user or +admin as part of it (i.e. test+user@yourdomain.com)
+    </p>
+    <div class="form-container">
+      <div class="slide-controls">
+        <input
+          type="radio"
+          name="slide"
+          id="login"
+          [checked]="loginOrSignup === 'login'"
+        />
+        <input
+          type="radio"
+          name="slide"
+          id="signup"
+          [checked]="loginOrSignup === 'signUp'"
+        />
+        <label for="login" class="slide login" (click)="toggleForms('login')"
+          >Login</label
+        >
+
+        <label for="signup" class="slide signup" (click)="toggleForms('signUp')"
+          >Sign Up</label
+        >
+        <div class="slider-tab"></div>
+      </div>
+      <div class="form-inner">
+        <form
+          [ngSwitch]="loginOrSignup"
+          class="form"
+          [formGroup]="form"
+          (ngSubmit)="onSubmit()"
+        >
+          <div class="field">
+            <input
+              type="text"
+              placeholder="Email Address"
+              required
+              formControlName="emailAddress"
+            />
+          </div>
+          <div class="field">
+            <input
+              type="password"
+              placeholder="Password"
+              required
+              formControlName="password"
+            />
+          </div>
+          <div class="pass-link" *ngIf="loginOrSignup === 'login'">
+            <a href="#">Forgot password?</a>
+          </div>
+          <div class="field" *ngIf="loginOrSignup === 'signUp'">
+            <input
+              type="password"
+              placeholder="Confirm password"
+              formControlName="repeatPassword"
+            />
+          </div>
+          <div class="field btn">
+            <div class="btn-layer"></div>
+            <input
+              type="submit"
+              [value]="loginOrSignup === 'login' ? 'Login' : 'Sign Up'"
+              [disabled]="form.invalid"
+            />
+          </div>
+          <div class="signup-link">
+            <ng-container *ngSwitchCase="'login'">
+              Not a member?
+              <a
+                href="#"
+                (click)="loginOrSignup = 'signUp'"
+                class="link-underline"
+                >Sign Up now</a
+              >
+            </ng-container>
+            <ng-container *ngSwitchCase="'signUp'">
+              Already a member?
+              <a
+                href="#"
+                (click)="loginOrSignup = 'login'"
+                class="link-underline"
+                >Login</a
+              >
+            </ng-container>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
